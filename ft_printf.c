@@ -6,11 +6,16 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:34:47 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/11/26 21:11:06 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/11/28 16:04:27 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
+{
+
+}
+
 
 int ft_printf(const char *format, ...)
 {
