@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   tlist.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 18:34:47 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/11/30 21:17:05 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/11/30 18:00:04 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/11/30 20:52:51 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
+void structure(t_list *list)
 {
-
-}
-
-
-int ft_printf(const char *format, ...)
-{
-	va_list arg;
-	if(!format)
-		return (-1);
-	
-	va_start(arg, format);
-
-	va_end(arg);
+	list->i = 0;
+	list->minus = 0;
+	list->zero = 0;
+	list->wigth = 0;
+	list->precision = 0;	
 }
