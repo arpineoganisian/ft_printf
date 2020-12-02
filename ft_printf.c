@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 18:34:47 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/01 19:35:37 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/02 20:17:54 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int ft_printf(const char *format, ...)
 	
 	parser(format, arg, &list);
 	va_end(arg);
-	return(0);
+	return(list.len);
 }

@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:49:04 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/02 17:58:50 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:34:02 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void type_percent(t_list *list)
 {
+//	list->width > 1 ? (list->len += list->width) : (list->len += 1);
     if (list->width > 1)
     {
 		if ((!list->minus && !list->zero) || (!list->minus && list->zero))

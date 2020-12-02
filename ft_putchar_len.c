@@ -6,11 +6,12 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:45:08 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/11/30 20:45:26 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:36:06 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar_fd(char c)
+void	ft_putchar_len(char c, t_list list)
 {
 	write(1, &c, 1);
+	list->len++;
 }
