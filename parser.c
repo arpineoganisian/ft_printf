@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 14:48:18 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/02 21:38:08 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/02 21:43:27 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void parser(const char *format, va_list arg, t_list *list)
 	while (format[list->i])
 	{
 		if (format[list->i] != '%')
-			write(1, &format[list->i], 1);
+			ft_putchar_len(format[list->i], list);
 		else
 		{
 			list->i++;
