@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tlist.c                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 18:00:04 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/11/30 20:52:51 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/10/29 11:26:17 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/11/03 15:33:45 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void structure(t_list *list)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	list->i = 0;
-	list->minus = 0;
-	list->zero = 0;
-	list->wigth = 0;
-	list->precision = 0;	
+	size_t i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

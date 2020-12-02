@@ -1,21 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   original.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 18:17:06 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/01 19:56:47 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/10/29 16:23:50 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/11/06 13:11:47 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	//int a = 123;
-	char b = 'u';
-	printf("%08c", b);
-	return (0);
+	int i;
+
+	i = 0;
+	if (!dst && !src)
+		return (0);
+	if (dst > src)
+	{
+		i = len - 1;
+		while (i >= 0)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i--;
+		}
+	}
+	else
+	{
+		while (len > 0)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+			len--;
+		}
+	}
+	return (dst);
 }

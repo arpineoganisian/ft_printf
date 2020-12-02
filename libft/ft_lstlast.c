@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   original.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 18:17:06 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/01 19:56:47 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/11/09 15:23:01 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/11/09 15:56:11 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+t_list	*ft_lstlast(t_list *lst)
 {
-	//int a = 123;
-	char b = 'u';
-	printf("%08c", b);
-	return (0);
+	t_list	*tmp;
+
+	tmp = lst;
+	if (lst)
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+	}
+	return (tmp);
 }

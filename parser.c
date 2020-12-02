@@ -6,40 +6,20 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 14:48:18 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/11/30 21:32:52 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/02 19:05:40 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void *parse_type(const char *format, t_list *list)
-{
-	if (format[list->i] == 'c')
-		type_c();
-	if (format[list->i] == 's')
-
-	if (format[list->i] == 'p')
-
-	if (format[list->i] == 'd' || format[list->i] == 'i')
-
-	if (format[list->i] == 'u')
-
-	if (format[list->i] == 'x')
-
-	if (format[list->i] == 'X')
-
-	if (format[list->i] == '%')	
-
-}
-
-void *parse_width(const char *format, t_list *list, va_list *arg)
+void parse_width(const char *format, t_list *list, va_list arg)
 {
 	if (format[list->i] == '*')
 	{
 		list->width = va_arg(arg, int);
 		list->i++;
 	}
-	else
+	else if (format[list->i] >= '0' && format[list->i] <= '9')
 	{
 		list->width = ft_atoi(format + list->i);
 		while (format[list->i] >= '0' && format[list->i] <= '9')
@@ -47,9 +27,9 @@ void *parse_width(const char *format, t_list *list, va_list *arg)
 	}
 }
 
-void *parse_precision(const char *format, t_list *list, va_list *arg)
+void parse_precision(const char *format, t_list *list, va_list arg)
 {
-	if (list->i == ".")
+	if (format[list->i] == '.')
 	{
 		list->i++;
 		if (format[list->i] == '*')
@@ -57,7 +37,7 @@ void *parse_precision(const char *format, t_list *list, va_list *arg)
 			list->precision = va_arg(arg, int);
 			list->i++;
 		}
-		else
+		else if (format[list->i] >= '0' && format[list->i] <= '9')
 		{
 			list->precision = ft_atoi(format + list->i);
 			while (format[list->i] >= '0' && format[list->i] <= '9')
@@ -66,11 +46,29 @@ void *parse_precision(const char *format, t_list *list, va_list *arg)
 	}
 }
 
-void *parser(const char *format, va_list *arg)
+void parse_type(const char format, t_list *list, va_list arg)
 {
-	t_list	list;
+	if (format == 'c')
+		type_c(arg, list);
+	if (format == 's')
+		type_s(arg, list);
+/*
+	if (format == 'p')
 
-	structure(&list);
+	if (format == 'd' || format == 'i')
+
+	if (format == 'u')
+
+	if (format == 'x')
+
+	if (format == 'X')
+*/
+	if (format == '%')
+		type_percent(list);
+}
+
+void parser(const char *format, va_list arg, t_list *list)
+{
 	while (format[list->i])
 	{
 		if (format[list->i] != '%')
@@ -80,13 +78,14 @@ void *parser(const char *format, va_list *arg)
 			list->i++;
 			while(format[list->i] == '-' || format[list->i] == '0')
 			{	
-				format[list->i] == '-' ? list->minus = 1 : list->zero = 1;
+				format[list->i] == '-' ? (list->minus = 1) : (list->zero = 1);
 				list->i++;	
 			}
-			parse_width(format + list->i, &list, arg);
-			parse_precision(format + list->i, &list, arg)
-			parse_type(format[list->i], &list);
+			parse_width(format, list, arg);
+			parse_precision(format, list, arg);
+			parse_type(format[list->i], list, arg);
 		}
-		list->i++;
+		if (format[list->i] != '\0')
+			list->i++;
 	}
 }

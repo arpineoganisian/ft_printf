@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   original.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 18:17:06 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/01 19:56:47 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/10/28 11:46:48 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/11/12 20:45:10 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+char	*ft_strchr(const char *s, int c)
 {
-	//int a = 123;
-	char b = 'u';
-	printf("%08c", b);
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return (((char *)s) + i);
+		i++;
+	}
+	if ((char)c == '\0')
+		return (((char *)s) + i);
 	return (0);
 }

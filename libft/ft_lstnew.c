@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   original.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/25 18:17:06 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/01 19:56:47 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/11/08 17:00:03 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/11/09 15:21:57 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int main()
+t_list	*ft_lstnew(void *content)
 {
-	//int a = 123;
-	char b = 'u';
-	printf("%08c", b);
-	return (0);
+	t_list *new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
