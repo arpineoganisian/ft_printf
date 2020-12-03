@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 18:57:17 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/02 21:33:45 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/02 22:13:22 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void type_s(va_list arg, t_list *list)
 {
 	char *str;
 
-	str = va_arg(format, char*);
+	str = va_arg(arg, char*);
+	(void)list;	
 
 }
