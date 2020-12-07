@@ -5,13 +5,13 @@ int main()
 //	int i1;
 	int i2;
 //	char u = 'u';
-//	char a = 'a';
-	char str[5] = "1234\0";
+//	char *str = NULL;
+//	int a = 12;
 
 	//___string
-//	i1 = ft_printf("re-coded: %s");
+//	i1 = ft_printf("re-coded: |%8.2d", a);
 //		printf("| %d\n", i1);
-	i2 = printf("original: %8.2s", str);
+	i2 = printf("original: |%*.*d", 8, 4, -12);
 		printf("| %d\n", i2);
 
 	//___%

@@ -6,18 +6,23 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 14:48:18 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/02 21:43:27 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/05 16:41:29 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void parse_width(const char *format, t_list *list, va_list arg)
+void	parse_width(const char *format, t_list *list, va_list arg)
 {
 	if (format[list->i] == '*')
 	{
 		list->width = va_arg(arg, int);
 		list->i++;
+		if (list->width < 0)
+		{
+			list->width *= -1;
+			list->minus = 1;
+		}
 	}
 	else if (format[list->i] >= '0' && format[list->i] <= '9')
 	{
@@ -27,7 +32,7 @@ void parse_width(const char *format, t_list *list, va_list arg)
 	}
 }
 
-void parse_precision(const char *format, t_list *list, va_list arg)
+void	parse_precision(const char *format, t_list *list, va_list arg)
 {
 	if (format[list->i] == '.')
 	{
@@ -43,21 +48,22 @@ void parse_precision(const char *format, t_list *list, va_list arg)
 			while (format[list->i] >= '0' && format[list->i] <= '9')
 				list->i++;
 		}
+		else
+			list->precision = 0;
 	}
 }
 
-void parse_type(const char format, t_list *list, va_list arg)
+void	parse_type(const char format, t_list *list, va_list arg)
 {
 	if (format == 'c')
 		type_c(arg, list);
 	if (format == 's')
 		type_s(arg, list);
-/*
-	if (format == 'p')
-
+/*	if (format == 'p')
+*/
 	if (format == 'd' || format == 'i')
-
-	if (format == 'u')
+		type_d_i(arg, list);
+/*	if (format == 'u')
 
 	if (format == 'x')
 
@@ -67,7 +73,7 @@ void parse_type(const char format, t_list *list, va_list arg)
 		type_percent(list);
 }
 
-void parser(const char *format, va_list arg, t_list *list)
+void	parser(const char *format, va_list arg, t_list *list)
 {
 	while (format[list->i])
 	{
@@ -76,10 +82,11 @@ void parser(const char *format, va_list arg, t_list *list)
 		else
 		{
 			list->i++;
-			while(format[list->i] == '-' || format[list->i] == '0')
-			{	
-				format[list->i] == '-' ? (list->minus = 1) : (list->zero = 1);
-				list->i++;	
+			while (format[list->i] == '-' || format[list->i] == '0')
+			{
+				(format[list->i] == '-') ? (list->minus = 1) :
+					(list->zero = 1);
+				list->i++;
 			}
 			parse_width(format, list, arg);
 			parse_precision(format, list, arg);
