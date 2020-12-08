@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struture.c                                         :+:      :+:    :+:   */
+/*   intlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 14:26:09 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/07 22:27:14 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/12/08 13:10:29 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/12/08 13:18:33 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	structure(t_list *list)
+long long int intlen(long long int n)
 {
-	list->i = 0;
-	list->minus = 0;
-	list->zero = 0;
-	list->width = 0;
-	list->precision = -1;
-	list->len = 0;
+	int len;
+
+	len = 0;
+	while (n > 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
 }

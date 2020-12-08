@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:59:27 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/05 16:41:32 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/07 21:35:53 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ void			type_c(va_list arg, t_list *list);
 void			type_percent(t_list *list);
 void			type_s(va_list arg, t_list *list);
 void			type_d_i(va_list arg, t_list *list);
+
 
 #endif

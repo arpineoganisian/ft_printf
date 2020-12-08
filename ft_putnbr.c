@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struture.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 14:26:09 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/07 22:27:14 by hwoodwri         ###   ########.fr       */
+/*   Created: 2020/12/07 21:45:36 by hwoodwri          #+#    #+#             */
+/*   Updated: 2020/12/07 22:27:03 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-
-void	structure(t_list *list)
+void	ft_putnbr_len(long long int nb, t_list *list)
 {
-	list->i = 0;
-	list->minus = 0;
-	list->zero = 0;
-	list->width = 0;
-	list->precision = -1;
-	list->len = 0;
+	char x;
+
+	if (nb == 0)
+		ft_putchar_len('0', list);	
+	if (nb > 0)
+	{
+		if (nb > 9)
+		{
+			ft_putnbr(nb / 10);
+			x = nb % 10 + '0';
+			ft_putchar_len(x, list);
+		}
+		else
+		{
+			x = nb % 10 + '0';
+			ft_putchar(x, list);
+		}
+	}
 }
