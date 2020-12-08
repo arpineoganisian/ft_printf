@@ -9,9 +9,9 @@ int main()
 //	int a = 12;
 
 	//___string
-	i1 = ft_printf("re-coded: |%07d", -12);
+	i1 = ft_printf("re-coded: |%u", 4294967295);
 		printf("| %d\n", i1);
-	i2 = printf("original: |%07d", -12);
+	i2 = printf("original: |%u", 4294967295);
 		printf("| %d\n", i2);
 
 	//___%

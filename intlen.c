@@ -6,15 +6,19 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 13:10:29 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/08 13:19:44 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/08 16:20:11 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long long int intlen(long long int n)
+#include "libftprintf.h"
+
+int	intlen(long n, t_list *list)
 {
 	int len;
 
 	len = 0;
+	if (n == 0 && list->precision != 0)
+		len = 1;
 	while (n > 0)
 	{
 		n = n / 10;

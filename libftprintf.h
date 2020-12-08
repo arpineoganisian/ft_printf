@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:59:27 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/07 21:35:53 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/08 16:31:53 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void			ft_putchar_len(char c, t_list *list);
 void			type_c(va_list arg, t_list *list);
 void			type_percent(t_list *list);
 void			type_s(va_list arg, t_list *list);
-void			type_d_i(va_list arg, t_list *list);
-
+void			type_d_i(va_list arg, t_list *list, char type);
+int				intlen(long n, t_list *list);
+void			ft_putnbr_len(long nb, t_list *list);
 
 #endif

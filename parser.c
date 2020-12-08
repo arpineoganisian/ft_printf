@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 14:48:18 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/07 19:10:10 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/08 16:17:32 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,11 @@ void	parse_type(const char format, t_list *list, va_list arg)
 		type_s(arg, list);
 /*	if (format == 'p')
 */
-	if (format == 'd' || format == 'i')
-		type_d_i(arg, list);
-/*	if (format == 'u')
-
-	if (format == 'x')
+	if (format == 'd' || format == 'i' || format == 'u')
+		type_d_i(arg, list, format);
+//	if (format == 'u')
+//		type_u(arg, list);
+/*	if (format == 'x')
 
 	if (format == 'X')
 */

@@ -6,22 +6,21 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 14:51:06 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/08 13:19:39 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/08 16:31:48 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void type_d_i(va_list arg, t_list *list)
+void type_d_i(va_list arg, t_list *list, char type)
 {
-	int		nbr;
 	int		len;
 	int		preclen;
 	int		mns;
-	long long int n;
+	long	n;
 
-	nbr = va_arg(arg, int);
-	n = (long long int)nbr;
+	type == 'u' ? (n = (long)va_arg(arg, unsigned int)) :
+		(n = (long)va_arg(arg, int));
 	mns = 0;
 	preclen = 0;
 	if (n < 0)
@@ -29,14 +28,11 @@ void type_d_i(va_list arg, t_list *list)
 		mns = 1;
 		n = -n;
 	}
-//	str = ft_itoa(n);
-	if (list->precision == 0 && n == 0)
-		str = "";
-	mns ? (len = list->width - (int)ft_strlen(str) - 1) :
-		(len = list->width - (int)ft_strlen(str));
-	if (list->precision > (int)ft_strlen(str))
+	mns ? (len = list->width - intlen(n, list) - 1) :
+		(len = list->width - intlen(n, list));
+	if (list->precision > intlen(n, list))
 	{
-		preclen = list->precision - (int)ft_strlen(str);
+		preclen = list->precision - intlen(n, list);
 		len = len - preclen;
 	}
 	if (list->precision >= 0)
@@ -58,11 +54,7 @@ void type_d_i(va_list arg, t_list *list)
 			ft_putchar_len('-', list);
 		while(preclen-- > 0)
 				ft_putchar_len('0', list);
-//		while (*str)
-//		{
-//			ft_putchar_len(*str, list);
-//			str++;
-//		}
+		list->precision == 0 && n == 0 ? NULL : ft_putnbr_len(n, list);
 		if ((list->minus && list->zero) || (list->minus && !list->zero))
 			while (len-- > 0)
 				ft_putchar_len(' ', list);
@@ -73,12 +65,6 @@ void type_d_i(va_list arg, t_list *list)
 			ft_putchar_len('-', list);
 		while(preclen--)
 			ft_putchar_len('0', list);
-//		while (*str)
-//		{
-//			ft_putchar_len(*str, list);
-//			str++;
-//		}
+		list->precision == 0 && n == 0 ? NULL : ft_putnbr_len(n, list);
 	}
-	free(str);
 }
-
