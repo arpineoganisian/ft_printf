@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 17:34:59 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/09 18:51:24 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/09 20:01:03 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,21 @@ void	there_is_nowidth(long n, t_struct *l)
 void	type_d_i_u(va_list arg, t_struct *l, char type)
 {
 	long	n;
-
-	type == 'u' ? (n = (long)va_arg(arg, unsigned int)) :
+    int     nlen;
+	
+    type == 'u' ? (n = (long)va_arg(arg, unsigned int)) :
 		(n = (long)va_arg(arg, int));
-	if (n < 0)
+    if (n < 0)
 	{
 		l->mns = 1;
 		n = -n;
 	}
-	l->mns ? (l->widlen = l->width - intlen(n, l) - 1) :
-		(l->widlen = l->width - intlen(n, l));
-	if (l->precision > intlen(n, l))
+    nlen = nbrlen(n, l, type);
+	l->mns ? (l->widlen = l->width - nlen - 1) :
+		(l->widlen = l->width - nlen);
+	if (l->precision > nlen)
 	{
-		l->preclen = l->precision - intlen(n, l);
+		l->preclen = l->precision - nlen;
 		l->widlen -= l->preclen;
 	}
 	if (l->precision >= 0)

@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:59:27 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/09 19:42:40 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/09 20:01:35 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ void			type_c(va_list arg, t_struct *l);
 void			type_percent(t_struct *l);
 void			type_s(va_list arg, t_struct *l);
 void			type_d_i_u(va_list arg, t_struct *l, char type);
-int				intlen(long n, t_struct *l);
+int				nbrlen(unsigned long n, t_struct *l, char type);
 void			ft_putnbr_len(long nb, t_struct *l);
 void			type_x_p(va_list arg, t_struct *l, char type);
-int				hexlen(unsigned long n, t_struct *l);
 void			ft_puthex_len(unsigned long nb, t_struct *l, char type);
 
 #endif
