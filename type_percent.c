@@ -12,24 +12,24 @@
 
 #include "libftprintf.h"
 
-void	type_percent(t_list *list)
+void	type_percent(t_struct *l)
 {
-	if (list->width > 1)
+	if (l->width > 1)
 	{
-		if ((!list->minus && !list->zero) || (!list->minus && list->zero))
+		if ((!l->minus && !l->zero) || (!l->minus && l->zero))
 		{
-			if (list->zero)
-				while (list->width-- > 1)
-					ft_putchar_len('0', list);
+			if (l->zero)
+				while (l->width-- > 1)
+					ft_putchar_len('0', l);
 			else
-				while (list->width-- > 1)
-					ft_putchar_len(' ', list);
+				while (l->width-- > 1)
+					ft_putchar_len(' ', l);
 		}
-		ft_putchar_len('%', list);
-		if ((list->minus && list->zero) || (list->minus && !list->zero))
-			while (list->width-- > 1)
-				ft_putchar_len(' ', list);
+		ft_putchar_len('%', l);
+		if ((l->minus && l->zero) || (l->minus && !l->zero))
+			while (l->width-- > 1)
+				ft_putchar_len(' ', l);
 	}
 	else
-		ft_putchar_len('%', list);
+		ft_putchar_len('%', l);
 }

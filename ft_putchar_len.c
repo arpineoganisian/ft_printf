@@ -12,8 +12,8 @@
 
 #include "libftprintf.h"
 
-void	ft_putchar_len(char c, t_list *list)
+void	ft_putchar_len(char c, t_struct *l)
 {
 	write(1, &c, 1);
-	list->len++;
+	l->len++;
 }

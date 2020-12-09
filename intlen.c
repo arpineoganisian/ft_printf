@@ -12,12 +12,12 @@
 
 #include "libftprintf.h"
 
-int	intlen(long n, t_list *list)
+int	intlen(long n, t_struct *l)
 {
 	int len;
 
 	len = 0;
-	if (n == 0 && list->precision != 0)
+	if (n == 0 && l->precision != 0)
 		len = 1;
 	while (n > 0)
 	{

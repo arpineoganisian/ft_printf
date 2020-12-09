@@ -12,81 +12,81 @@
 
 #include "libftprintf.h"
 
-void	print_before(t_list *list, int len)
+void	print_before(t_struct *l, int len)
 {
-	if (list->zero)
+	if (l->zero)
 		while (len-- > 0)
-			ft_putchar_len('0', list);
+			ft_putchar_len('0', l);
 	else
 		while (len-- > 0)
-			ft_putchar_len(' ', list);
+			ft_putchar_len(' ', l);
 }
 
-void	if_precision(char *str, t_list *list)
+void	if_precision(char *str, t_struct *l)
 {
 	int len;
 
-	len = list->width - list->precision;
-	if (list->width >= list->precision)
+	len = l->width - l->precision;
+	if (l->width >= l->precision)
 	{
-		if ((!list->minus && !list->zero) || (!list->minus && list->zero))
-			print_before(list, len);
-		while (list->precision-- > 0)
+		if ((!l->minus && !l->zero) || (!l->minus && l->zero))
+			print_before(l, len);
+		while (l->precision-- > 0)
 		{
-			ft_putchar_len(*str, list);
+			ft_putchar_len(*str, l);
 			str++;
 		}
-		if ((list->minus && list->zero) || (list->minus && !list->zero))
+		if ((l->minus && l->zero) || (l->minus && !l->zero))
 			while (len-- > 0)
-				ft_putchar_len(' ', list);
+				ft_putchar_len(' ', l);
 	}
 	else
 	{
-		while (list->precision-- > 0)
+		while (l->precision-- > 0)
 		{
-			ft_putchar_len(*str, list);
+			ft_putchar_len(*str, l);
 			str++;
 		}
 	}
 }
 
-void	no_precision(char *str, t_list *list)
+void	no_precision(char *str, t_struct *l)
 {
 	int len;
 
-	len = list->width - (int)ft_strlen(str);
-	if (list->width)
+	len = l->width - (int)ft_strlen(str);
+	if (l->width)
 	{
-		if ((!list->minus && !list->zero) || (!list->minus && list->zero))
-			print_before(list, len);
+		if ((!l->minus && !l->zero) || (!l->minus && l->zero))
+			print_before(l, len);
 		while (*str)
 		{
-			ft_putchar_len(*str, list);
+			ft_putchar_len(*str, l);
 			str++;
 		}
-		if ((list->minus && list->zero) || (list->minus && !list->zero))
+		if ((l->minus && l->zero) || (l->minus && !l->zero))
 			while (len-- > 0)
-				ft_putchar_len(' ', list);
+				ft_putchar_len(' ', l);
 	}
 	else
 	{
 		while (*str)
 		{
-			ft_putchar_len(*str, list);
+			ft_putchar_len(*str, l);
 			str++;
 		}
 	}
 }
 
-void	type_s(va_list arg, t_list *list)
+void	type_s(va_list arg, t_struct *l)
 {
 	char *str;
 
 	str = va_arg(arg, char*);
 	if (str == NULL)
 		str = "(null)";
-	if (list->precision >= 0 && (list->precision < (int)ft_strlen(str)))
-		if_precision(str, list);
+	if (l->precision >= 0 && (l->precision < (int)ft_strlen(str)))
+		if_precision(str, l);
 	else
-		no_precision(str, list);
+		no_precision(str, l);
 }

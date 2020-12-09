@@ -14,14 +14,14 @@
 
 int	ft_printf(const char *format, ...)
 {
-	t_list	list;
-	va_list	arg;
+	t_struct    l;
+	va_list     arg;
 
 	va_start(arg, format);
-	structure(&list);
+	structure(&l);
 	if (!format)
 		return (-1);
-	parser(format, arg, &list);
+	parser(format, arg, &l);
 	va_end(arg);
-	return (list.len);
+	return (l.len);
 }

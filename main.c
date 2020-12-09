@@ -2,16 +2,16 @@
 
 int main()
 {
-	int i1;
+//	int i1;
 	int i2;
 //	char u = 'u';
 //	char *str = NULL;
 //	int a = 12;
 
 	//___string
-	i1 = ft_printf("re-coded: |%u", 4294967295);
-		printf("| %d\n", i1);
-	i2 = printf("original: |%u", 4294967295);
+//	i1 = ft_printf("re-coded: |%x, %X", 555, 555);
+//		printf("| %d\n", i1);
+	i2 = printf("original: |%x, %X", 555, 555);
 		printf("| %d\n", i2);
 
 	//___%
