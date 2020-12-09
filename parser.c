@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 14:48:18 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/09 15:29:36 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/09 19:42:36 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,8 @@ void	parse_type(const char format, t_struct *l, va_list arg)
 */
 	if (format == 'd' || format == 'i' || format == 'u')
 		type_d_i_u(arg, l, format);
-	if (format == 'x')
+	if (format == 'x' || format == 'X')
 		type_x_p(arg, l, format);
-/*	if (format == 'X')
-*/
 	if (format == '%')
 		type_percent(l);
 }
