@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:59:27 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/08 18:04:10 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/09 15:51:10 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ void			type_s(va_list arg, t_struct *l);
 void			type_d_i_u(va_list arg, t_struct *l, char type);
 int				intlen(long n, t_struct *l);
 void			ft_putnbr_len(long nb, t_struct *l);
+void			type_x_p(va_list arg, t_struct *l, char type);
+int				hexlen(unsigned long n, t_struct *l);
+void			ft_puthex_len(unsigned long nb, t_struct *l);
 
 #endif
