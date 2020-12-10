@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 20:04:09 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/10 15:19:24 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/10 16:59:30 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_puthex_len(unsigned long int nb, t_struct *l, char type)
 {
-	char c;
-	int t;
+	char	c;
+	int		t;
 
 	type == 'X' ? t = 55 :
 		(t = 87);
@@ -32,7 +32,7 @@ void	ft_puthex_len(unsigned long int nb, t_struct *l, char type)
 			ft_putchar_len(c, l);
 		}
 		else if (nb > 9 && nb < 16)
-		{	
+		{
 			c = nb + t;
 			ft_putchar_len(c, l);
 		}

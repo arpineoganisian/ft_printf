@@ -6,7 +6,7 @@
 #    By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/01 21:14:08 by hwoodwri          #+#    #+#              #
-#    Updated: 2020/12/10 15:58:19 by hwoodwri         ###   ########.fr        #
+#    Updated: 2020/12/10 16:48:09 by hwoodwri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC = ft_printf.c \
 	  nbrlen.c \
 	  ft_putnbr_len.c \
 	  type_x_p.c \
-	  ft_puthex_len.c \
+	  ft_puthex_len.c
 
 OBJ = $(SRC:.c=.o)
 
