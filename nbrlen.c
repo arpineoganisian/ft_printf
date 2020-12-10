@@ -6,13 +6,13 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 13:10:29 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/10 13:56:43 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/10 15:18:32 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	nbrlen(unsigned long n, t_struct *l, char type)
+int	nbrlen(unsigned long int n, t_struct *l, char type)
 {
 	int len;
 	int	t;

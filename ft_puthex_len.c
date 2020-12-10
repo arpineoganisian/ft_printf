@@ -6,13 +6,13 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 20:04:09 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/10 14:03:24 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/10 15:19:24 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_puthex_len(unsigned long nb, t_struct *l, char type)
+void	ft_puthex_len(unsigned long int nb, t_struct *l, char type)
 {
 	char c;
 	int t;
@@ -23,7 +23,7 @@ void	ft_puthex_len(unsigned long nb, t_struct *l, char type)
 		ft_putchar_len('0', l);
 	if (nb > 0)
 	{
-		if (nb > 16)
+		if (nb > 15)
 			ft_puthex_len(nb / 16, l, type);
 		nb %= 16;
 		if (nb < 10)

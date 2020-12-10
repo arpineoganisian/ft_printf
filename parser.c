@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 14:48:18 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/10 13:53:37 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/10 16:01:49 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ void	parser(const char *format, va_list arg, t_struct *l)
 		}
 		if (format[l->i] != '\0')
 			l->i++;
+		vladimir(l);
 	}
 }
