@@ -6,7 +6,7 @@
 #    By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/01 21:14:08 by hwoodwri          #+#    #+#              #
-#    Updated: 2020/12/09 19:59:42 by hwoodwri         ###   ########.fr        #
+#    Updated: 2020/12/10 13:49:20 by hwoodwri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ LIBFT_DIR = ./libft/
 
 SRC = ft_printf.c \
 	  parser.c \
-	  structure.c \
 	  ft_putchar_len.c \
 	  type_c.c \
 	  type_percent.c \

@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 19:50:02 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/09 20:02:43 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/10 13:52:58 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	type_x_p(va_list arg, t_struct *l, char type)
 	unsigned long	n;
 	int				hlen;
 
-	type == 'x' || type == 'X' ? (n = va_arg(arg, unsigned int)) :
-		(n = va_arg(arg, unsigned long));
+	type == 'p' ? (n = va_arg(arg, unsigned long)) :
+		(n = va_arg(arg, unsigned int));
 	hlen = nbrlen(n, l, type);
 	l->widlen = l->width - hlen;
 	if (l->precision > hlen)

@@ -6,7 +6,7 @@
 /*   By: hwoodwri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 17:59:27 by hwoodwri          #+#    #+#             */
-/*   Updated: 2020/12/09 20:01:35 by hwoodwri         ###   ########.fr       */
+/*   Updated: 2020/12/10 13:49:22 by hwoodwri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct	s_struct
 
 int				ft_printf(const char *format, ...);
 void			parser(const char *format, va_list arg, t_struct *l);
-void			structure(t_struct *l);
 void			ft_putchar_len(char c, t_struct *l);
 void			type_c(va_list arg, t_struct *l);
 void			type_percent(t_struct *l);
